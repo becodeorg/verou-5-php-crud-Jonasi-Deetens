@@ -19,15 +19,15 @@
 <main>
     <h1>Let's create a new Beyblade!</h1>
 
-    <form action="../index.php" method="post">
+    <form action="./" method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name"><br>
         <label for="type">Type:</label>
         <input type="text" id="type" name="type"><br>
         <label for="spin_direction">Spin direction:</label>
         <select name="spin_direction" id="spin_direction">
-            <option value="left">Left</option>
-            <option value="left">Right</option>
+            <option value="Left">Left</option>
+            <option value="Right">Right</option>
         </select><br>
         <label for="weight">Weight:</label>
         <input type="number" id="weight" name="weight"><br>
@@ -39,8 +39,9 @@
         <input type="number" id="stamina" name="stamina"><br>
         <label for="special_move">Special Move:</label>
         <input type="text" id="special_move" name="special_move"><br>
-        <label for="beast">Beast:</label>
-        <input type="text" id="beast" name="beast"><br>
+        <label for="bey_beast">Beast:</label>
+        <input type="text" id="bey_beast" name="bey_beast"><br>
+        <input type="submit" value="Create">
     </form>
 </main>
 </body>
