@@ -23,6 +23,7 @@ $beyblades = $beyBladeRepository->get();
 // Get the current action to execute
 // If nothing is specified, it will remain empty (home should be loaded)
 $action = $_GET['action'] ?? null;
+print_r($_GET);
 
 // Load the relevant action
 // This system will help you to only execute the code you want, instead of all of it (or complex if statements)
@@ -45,4 +46,5 @@ function overview(array $beyblades)
 function create()
 {
     // TODO: provide the create logic
+    require 'create.php';
 }

@@ -8,20 +8,28 @@
     <title>Goodcard - track your collection of Pokémon cards</title>
 </head>
 <body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="#">Overview</a></li>
+            <li><a href="?action=create">New Beyblade</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h1>Let it RIP - I'm not talking about your farts, but about beyblades ofcourse!</h1>
 
-<h1>Let it RIP - I'm not talking about your farts, but about beyblades ofcourse!</h1>
-
-<ul>
-    <?php foreach ($beyblades as $beyblade) : ?>
-        <li>
-            <h2><?= $beyblade['name']; ?></h2>
-            <p>Spinning direction: <?= $beyblade['spin_direction']; ?></p>
-            <p>Stats: [<?= "W:" . $beyblade['weight'] . ", AP: " . $beyblade['attack_power'] . ", DP:" . $beyblade['defense_power'] . ", S: " . $beyblade['stamina']; ?>]</p>
-            <p>Special move: <?= $beyblade['special_move']; ?></p>
-            <p>Beast: <?= $beyblade['bey_beast']; ?></p>
-        </li>
-    <?php endforeach; ?>
-</ul>
-
+    <ul>
+        <?php foreach ($beyblades as $beyblade) : ?>
+            <li>
+                <h2><?= $beyblade['name']; ?></h2>
+                <p>Spinning direction: <?= $beyblade['spin_direction']; ?></p>
+                <p>Stats: [<?= "W:" . $beyblade['weight'] . ", AP: " . $beyblade['attack_power'] . ", DP:" . $beyblade['defense_power'] . ", S: " . $beyblade['stamina']; ?>]</p>
+                <p>Special move: <?= $beyblade['special_move']; ?></p>
+                <p>Beast: <?= $beyblade['bey_beast']; ?></p>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</main>
 </body>
 </html>
