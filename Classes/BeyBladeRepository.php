@@ -27,17 +27,19 @@ class BeyBladeRepository
     // Get all
     public function get(): array
     {
-        // TODO: Create an SQL query
-        // TODO: Use your database connection (see $databaseManager) and send your query to your database.
-        // TODO: fetch your data at the end of that action.
-        // TODO: replace dummy data by real one
-        return [
-            ['name' => 'dummy one'],
-            ['name' => 'dummy two'],
-        ];
-
-        // We get the database connection first, so we can apply our queries with it
-        // return $this->databaseManager->connection-> (runYourQueryHere)
+        try {
+            $query = "SELECT * FROM beyblades";
+            $statement = $this->databaseManager->connection->prepare($query);
+            $statement->execute();
+            $result = $statement->fetchAll();
+        
+            return $result;
+        
+        } catch (PDOException $e) {
+            // Handle any database errors
+            echo "Error: " . $e->getMessage();
+            return [];
+        }
     }
 
     public function update(): void

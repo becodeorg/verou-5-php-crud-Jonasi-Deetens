@@ -11,15 +11,14 @@ error_reporting(E_ALL);
 // Load you classes
 require_once 'config.php';
 require_once 'classes/DatabaseManager.php';
-require_once 'classes/CardRepository.php';
+require_once 'classes/BeyBladeRepository.php';
 
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password'], $config['dbname']);
 $databaseManager->connect();
 
-// This example is about a Pokémon card collection
 // Update the naming if you'd like to work with another collection
 $beyBladeRepository = new BeyBladeRepository($databaseManager);
-$beyblades = $beyBladesRepository->get();
+$beyblades = $beyBladeRepository->get();
 
 // Get the current action to execute
 // If nothing is specified, it will remain empty (home should be loaded)
@@ -32,11 +31,11 @@ switch ($action) {
         create();
         break;
     default:
-        overview();
+        overview($beyblades);
         break;
 }
 
-function overview()
+function overview(array $beyblades)
 {
     // Load your view
     // Tip: you can load this dynamically and based on a variable, if you want to load another view

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h1>Goodcard - track your collection of Pokémon cards</h1>
+<h1>Let it RIP - I'm not talking about your farts, but about beyblades ofcourse!</h1>
 
 <ul>
     <?php foreach ($beyblades as $beyblade) : ?>
@@ -18,7 +18,7 @@
             <p>Spinning direction: <?= $beyblade['spin_direction']; ?></p>
             <p>Stats: [<?= "W:" . $beyblade['weight'] . ", AP: " . $beyblade['attack_power'] . ", DP:" . $beyblade['defense_power'] . ", S: " . $beyblade['stamina']; ?>]</p>
             <p>Special move: <?= $beyblade['special_move']; ?></p>
-            <p>Beast: <?= $beyblade['beast']; ?></p>
+            <p>Beast: <?= $beyblade['bey_beast']; ?></p>
         </li>
     <?php endforeach; ?>
 </ul>
