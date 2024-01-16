@@ -12,7 +12,7 @@
 <h1>Goodcard - track your collection of Pokémon cards</h1>
 
 <ul>
-    <?php foreach ($cards as $card) : ?>
+    <?php foreach ($beyblades as $beyblade) : ?>
         <li><?= $card['name'] ?></li>
     <?php endforeach; ?>
 </ul>
