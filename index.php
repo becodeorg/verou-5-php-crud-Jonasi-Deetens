@@ -33,6 +33,10 @@ switch ($action) {
     case 'create':
         create();
         break;
+    case 'edit':
+        $beyblade = $beyBladeRepository->find($_GET['id'])[0];
+        edit($beyblade);
+        break;
     default:
         overview($beyblades);
         break;
@@ -49,4 +53,9 @@ function create()
 {
     // TODO: provide the create logic
     require 'create.php';
+}
+
+function edit($beyblade)
+{
+    require 'edit.php';
 }

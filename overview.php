@@ -27,6 +27,7 @@
                 <p>Stats: [<?= "W:" . $beyblade['weight'] . ", AP: " . $beyblade['attack_power'] . ", DP:" . $beyblade['defense_power'] . ", S: " . $beyblade['stamina']; ?>]</p>
                 <p>Special move: <?= $beyblade['special_move']; ?></p>
                 <p>Beast: <?= $beyblade['bey_beast']; ?></p>
+                <p><a href="?action=edit&id=<?= $beyblade["id"] ?>">Edit</a></p>
             </li>
         <?php endforeach; ?>
     </ul>

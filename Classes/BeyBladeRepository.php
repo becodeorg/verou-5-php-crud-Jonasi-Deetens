@@ -38,9 +38,24 @@ class BeyBladeRepository
     }
 
     // Get one
-    public function find(): array
+    public function find($id): array
     {
+        try {
+            $query = "SELECT * FROM beyblades WHERE id = :id";
+            $statement = $this->databaseManager->connection->prepare($query);
 
+            $statement->bindParam(":id", $id);
+
+            $statement->execute();
+            $result = $statement->fetchAll();
+        
+            return $result;
+        
+        } catch (PDOException $e) {
+            // Handle any database errors
+            echo "Error: " . $e->getMessage();
+            return [];
+        }
     }
 
     // Get all
