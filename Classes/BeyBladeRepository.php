@@ -78,12 +78,52 @@ class BeyBladeRepository
 
     public function update(): void
     {
+        try {
+            $query = "UPDATE beyblades 
+                SET name = :name, 
+                    type = :type, 
+                    spin_direction = :spin_direction, 
+                    weight = :weight, 
+                    attack_power = :attack_power, 
+                    defense_power = :defense_power, 
+                    stamina = :stamina, 
+                    special_move = :special_move, 
+                    bey_beast = :bey_beast 
+                WHERE id = :id"; 
 
+            $statement = $this->databaseManager->connection->prepare($query);
+
+            $statement->bindParam(":id", $_GET["id"]);
+            $statement->bindParam(":name", $_POST["name"]);
+            $statement->bindParam(":type", $_POST["type"]);
+            $statement->bindParam(":spin_direction", $_POST["spin_direction"]);
+            $statement->bindParam(":weight", $_POST["weight"]);
+            $statement->bindParam(":attack_power", $_POST["attack_power"]);
+            $statement->bindParam(":defense_power", $_POST["defense_power"]);
+            $statement->bindParam(":stamina", $_POST["stamina"]);
+            $statement->bindParam(":special_move", $_POST["special_move"]);
+            $statement->bindParam(":bey_beast", $_POST["bey_beast"]);
+
+            $statement->execute();
+        } catch (PDOException $e) {
+            // Handle any database errors
+            echo "Error: " . $e->getMessage();
+        }
     }
 
-    public function delete(): void
+    public function delete($id): void
     {
+        try {
+            $query = "DELETE FROM beyblades WHERE id = :id";
+            $statement = $this->databaseManager->connection->prepare($query);
 
+            $statement->bindParam(":id", $id);
+
+            $statement->execute();
+        } catch (PDOException $e) {
+            // Handle any database errors
+            echo "Error: " . $e->getMessage();
+        }
     }
 
 }

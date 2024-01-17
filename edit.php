@@ -18,7 +18,7 @@
 <main>
     <h1>Let's update your Beyblade!</h1>
 
-    <form action="./" method="post">
+    <form method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="<?= $beyblade["name"] ?>"><br>
         <label for="type">Type:</label>
