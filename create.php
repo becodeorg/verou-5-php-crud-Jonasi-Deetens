@@ -41,6 +41,8 @@
         <input type="text" id="special_move" name="special_move"><br>
         <label for="bey_beast">Beast:</label>
         <input type="text" id="bey_beast" name="bey_beast"><br>
+        <label for="image">Image link:</label>
+        <input type="text" name="image" id="image">
         <input type="submit" value="Create">
     </form>
 </main>

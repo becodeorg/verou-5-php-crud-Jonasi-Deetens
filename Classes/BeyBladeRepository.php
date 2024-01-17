@@ -16,8 +16,8 @@ class BeyBladeRepository
     public function create(): void
     {
         try {
-            $query = "INSERT INTO beyblades (name, type, spin_direction, weight, attack_power, defense_power, stamina, special_move, bey_beast)
-                        VALUES (:name, :type, :spin_direction, :weight, :attack_power, :defense_power, :stamina, :special_move, :bey_beast);";
+            $query = "INSERT INTO beyblades (name, type, spin_direction, weight, attack_power, defense_power, stamina, special_move, bey_beast, image)
+                        VALUES (:name, :type, :spin_direction, :weight, :attack_power, :defense_power, :stamina, :special_move, :bey_beast, :image);";
             $statement = $this->databaseManager->connection->prepare($query);
 
             $statement->bindParam(":name", $_POST["name"]);
@@ -29,6 +29,7 @@ class BeyBladeRepository
             $statement->bindParam(":stamina", $_POST["stamina"]);
             $statement->bindParam(":special_move", $_POST["special_move"]);
             $statement->bindParam(":bey_beast", $_POST["bey_beast"]);
+            $statement->bindParam(":image", $_POST["image"]);
 
             $statement->execute();
         } catch (PDOException $e) {
@@ -88,7 +89,8 @@ class BeyBladeRepository
                     defense_power = :defense_power, 
                     stamina = :stamina, 
                     special_move = :special_move, 
-                    bey_beast = :bey_beast 
+                    bey_beast = :bey_beast,
+                    image = :image
                 WHERE id = :id"; 
 
             $statement = $this->databaseManager->connection->prepare($query);
@@ -103,6 +105,7 @@ class BeyBladeRepository
             $statement->bindParam(":stamina", $_POST["stamina"]);
             $statement->bindParam(":special_move", $_POST["special_move"]);
             $statement->bindParam(":bey_beast", $_POST["bey_beast"]);
+            $statement->bindParam(":image", $_POST["image"]);
 
             $statement->execute();
         } catch (PDOException $e) {

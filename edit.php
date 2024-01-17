@@ -25,8 +25,8 @@
         <input type="text" id="type" name="type" value="<?= $beyblade["type"] ?>"><br>
         <label for="spin_direction">Spin direction:</label>
         <select name="spin_direction" id="spin_direction">
-            <option value="Left" <?php $beyblade["spin_direction"] === "Left" ? "selected" : "" ?>>Left</option>
-            <option value="Right" <?php $beyblade["spin_direction"] === "Right" ? "selected" : "" ?>>Right</option>
+            <option value="Left" <?= $beyblade["spin_direction"] === "Left" ? "selected" : "" ?>>Left</option>
+            <option value="Right" <?= $beyblade["spin_direction"] === "Right" ? "selected" : "" ?>>Right</option>
         </select><br>
         <label for="weight">Weight:</label>
         <input type="number" id="weight" name="weight" value="<?= $beyblade["weight"] ?>"><br>
@@ -40,6 +40,8 @@
         <input type="text" id="special_move" name="special_move" value="<?= $beyblade["special_move"] ?>"><br>
         <label for="bey_beast">Beast:</label>
         <input type="text" id="bey_beast" name="bey_beast" value="<?= $beyblade["bey_beast"] ?>"><br>
+        <label for="image">Image url:</label>
+        <input type="text" id="image" name="image" value="<?= $beyblade["image"] ?>"><br>
         <input type="submit" value="Update">
     </form>
 </main>
